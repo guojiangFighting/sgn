@@ -29,6 +29,7 @@ type Encoder struct {
 	Seed             byte
 	EncodingCount    int
 	SaveRegisters    bool
+	excludedRegs     map[string]struct{}
 }
 
 // NewEncoder for creating new encoder structures

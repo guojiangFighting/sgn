@@ -160,14 +160,28 @@ func (encoder Encoder) GetBasePointer() string {
 
 // GetSafeRandomRegister returns a random register among all (registers-excluded parameters) based on given size
 func (encoder Encoder) GetSafeRandomRegister(size int, excludes ...string) (string, error) {
-	regs := []REG{}
-	for _, r := range REGS[encoder.architecture] {
-		for _, x := range excludes {
-			if r.Extended != x && r.Full != x && r.High != x && r.Low != x {
-				regs = append(regs, r)
-			}
-		}
-	}
+	if encoder.excludedRegs == nil {
+        encoder.excludedRegs = make(map[string]struct{})
+    }
+
+    // Add previous excluded registers
+    for reg := range encoder.excludedRegs {
+        excludes = append(excludes, reg)
+    }
+
+    regs := []REG{}
+    for _, r := range REGS[encoder.architecture] {
+        exclude := false
+        for _, x := range excludes {
+            if r.Extended == x || r.Full == x || r.High == x || r.Low == x {
+                exclude = true
+                break
+            }
+        }
+        if !exclude {
+            regs = append(regs, r)
+        }
+    }
 
 	r := regs[rand.Intn(len(regs))]
 	switch size {
