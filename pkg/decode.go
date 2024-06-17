@@ -47,7 +47,7 @@ func (encoder *Encoder) NewDecoderAssembly(payloadSize int) (string, error) {
 		return "", err
 	}
 
-	regL, err := encoder.GetSafeRandomRegister(8, reg, "CL")
+	regL, err := encoder.GetSafeRandomRegister(8, reg, "ESI", "EDI", "CL")
 	if err != nil {
 		return "", err
 	}
