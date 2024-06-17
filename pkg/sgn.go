@@ -39,8 +39,8 @@ func init() {
 	REGS[32] = append(REGS[32], REG{Extended: "ECX", High: "CX", Low: "CL", Arch: 32})
 	REGS[32] = append(REGS[32], REG{Extended: "EDX", High: "DX", Low: "DL", Arch: 32})
 	// since there is no way to access 1 byte use above instead
-	REGS[32] = append(REGS[32], REG{Extended: "ESI", High: "SI", Low: "AL", Arch: 32})
-	REGS[32] = append(REGS[32], REG{Extended: "EDI", High: "DI", Low: "BL", Arch: 32})
+	REGS[32] = append(REGS[32], REG{Extended: "ESI", High: "SI", Low: "SI", Arch: 32})
+	REGS[32] = append(REGS[32], REG{Extended: "EDI", High: "DI", Low: "DI", Arch: 32})
 	// Setup x64 GP the register values
 	REGS[64] = append(REGS[64], REG{Full: "RAX", Extended: "EAX", High: "AX", Low: "AL", Arch: 64})
 	REGS[64] = append(REGS[64], REG{Full: "RBX", Extended: "EBX", High: "BX", Low: "BL", Arch: 64})
