@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/EgeBalci/sgn/config"
-	sgn "github.com/EgeBalci/sgn/pkg"
-	"github.com/EgeBalci/sgn/utils"
+	"github.com/guojiangFighting/sgn/config"
+	sgn "github.com/guojiangFighting/sgn/pkg"
+	"github.com/guojiangFighting/sgn/utils"
 	"github.com/briandowns/spinner"
 
 	"github.com/fatih/color"
