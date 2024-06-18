@@ -1,4 +1,4 @@
-module github.com/EgeBalci/sgn
+module github.com/guojiangFighting/sgn
 
 go 1.15
 
