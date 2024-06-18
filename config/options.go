@@ -4,7 +4,7 @@ import (
 	"errors"
 	"os"
 
-	"github.com/EgeBalci/sgn/utils"
+	"github.com/guojiangFighting/sgn/utils"
 	"github.com/alecthomas/kong"
 )
 
